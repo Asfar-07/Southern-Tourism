@@ -1,0 +1,287 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.imagesection{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+.Mainimagediv{
+    width:70%;
+    background-color: rgba(0, 117, 255, 1);
+     height:75vh;
+}
+.MainAbout{
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+.placename , .placeabout{
+    width:70%;
+}
+.placename h1{
+    font-size: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.placeabout p{
+    font-size: 30px;
+    line-height: 45px;
+}
+.pointsandlocation {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.pointsandlocation div{
+    width:70%;
+    display: flex;
+    justify-content: center;
+}
+.points{
+    width: 50%;
+}
+.location{
+    width: 50%;
+}
+.points h3{
+    font-size: 32px;
+}
+.points li{
+    font-size: 24px;
+    font-family: initial;
+    margin: 20px 0;
+}  
+.hospitaloc{
+    width: 40%;
+    font-size: 20px;
+    text-align: center;
+}
+.lastsection{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.hotelsabouts{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hotelsabouts h2{
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.hotelsabouts div{
+    height: 50%;
+}
+.ad{
+    width: 50%;
+    display: flex;
+    justify-content: end;
+}
+.ad div{
+    width: 80%;
+    height: 600px;
+    background-color: rgba(217, 217, 217, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ad h1{
+    color: white;
+    font-size: 70px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+footer{
+display: flex;
+background-color: #2d2b33;
+bottom: 0;
+height: 320px;
+margin-top: 180px;
+width: 100%;
+position: relative;
+background-image: linear-gradient(to top,rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%),url(kalen-emsley-Bkci_8qcdvQ-unsplash.jpg);
+background-size: cover;
+}
+
+.redirect{
+margin-left: 80px;
+height: 200px;
+width: fit-content;
+/* background-color: #009688; */
+display: flex;
+top: 80px;
+flex-direction: column;
+position: relative;
+justify-content: space-evenly;
+}
+.redirect a{
+color: rgb(255, 255, 255);
+text-decoration: none;
+font-family: 'Gill Sans';
+font-weight: bold;
+transition: ease-in-out 3s;
+
+}
+
+.redirect h4{
+color: aliceblue;
+font-weight: bold;
+}
+
+.redirect a :hover{
+background-color: #009688;
+}
+.services{
+margin-left: 80px;
+height: 200px;
+width: fit-content;
+/* background-color: #009688; */
+display: flex;
+top: 80px;
+flex-direction: column;
+position: relative;
+justify-content: space-evenly;
+}
+
+.services a{
+color: aliceblue;
+font-weight: bold;
+text-decoration: none;
+font-family: 'Gill Sans';
+}
+
+.services h4{
+color: aliceblue;
+font-weight: bolder;
+}
+
+.footer h2{
+font-family:'Segoe UI';
+font-weight: 5000;
+margin-left: 100px;
+height: fit-content;
+height: 200px;
+width: fit-content;
+display: flex;
+top: 80px;
+flex-direction: column;
+font-size: 36px;
+color:wheat;
+position: relative;
+}
+.social{
+margin-left: 80px;
+height: 200px;
+width: fit-content;
+/* background-color: #009688; */
+display: flex;
+top: 80px;
+flex-direction: column;
+position: relative;
+justify-content: space-evenly;
+}
+
+.social a{
+color: aliceblue;
+font-weight: bold;
+text-decoration: none;
+font-family: 'Gill Sans';
+}
+.copyright{
+text-align: center;
+}
+#ratingOutput{
+    display: block;
+    font-size: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.ForRating{
+    position: fixed;
+    width: 500px;
+    height: 250px;
+    background-color: rgba(0, 0, 0, 0.64);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(1.5px); 
+    border-radius: 11px;
+}
+
+.ForRating i{
+color: white;
+font-size: 27px;
+font-weight: 600;
+}
+.ForRating button{
+    cursor: pointer;
+}
+.cancelrating{
+    display: flex;
+    justify-content: end;
+    margin:10px 20px;
+}
+.cancelrating button{
+    border: 0;
+    background-color: transparent;
+}
+.tellabout{
+    margin: 0 40px;
+}
+
+.username{
+    display: flex;
+}
+.usericon{
+    border-radius: 50%;
+    width: 39px;
+    height: 39px;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.username p{
+    color: white;
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    font-size: 20px;
+    font-family: initial;
+    letter-spacing: .5px;
+}
+.noteforrating{
+    color: white;
+    width: 80%;
+    margin: 10px 0;
+    font-size: 18px;
+    margin-left: 50px;
+    letter-spacing: .5px;
+}
+.ForRating main{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+
+}
+.rating span{
+    margin: 0 15px;
+    cursor: pointer;
+}
+.lastpostrating{
+    display: flex;
+    justify-content: end;
+}
+.lastpostrating button , a{
+    border: 0;
+    background-color: transparent;
+    margin-right: 25px;
+    margin-top: 10px;
+    color: rgba(0, 240, 255, 1);
+    text-decoration: none;
+    font-size: 18px;
+}

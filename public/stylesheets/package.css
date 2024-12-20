@@ -1,0 +1,377 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  background-color: rgba(232, 232, 232, 0.852);
+}
+header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+header a{
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: rgb(104, 104, 104);
+}
+header h2{
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin: 10px 0;
+}
+.imagesection{
+  width: 100%;
+  /* background-color: aqua; */
+}
+.callectionimage{
+  width: 100%;
+  /* height: 500px; */
+  display: flex;
+  justify-content: center;
+}
+.callectionpicker{
+  width: 100%;
+  /* height: 500px; */
+  display: flex;
+  justify-content: center;
+}
+.callectionpicker input{
+  display: none;
+}
+.mainImage{
+  margin-right: 30px;
+ width: 35%;
+  height: 430px;
+}
+.anotherimage{
+  /* margin-right: 150px; */
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+.anotherimage div{
+  height: 50%;
+}
+.CenterSection{
+  margin-top:50px ;
+  display: flex;
+  justify-content: space-between;
+  justify-content: space-evenly;
+  /* height: 400px; */
+}
+.CenterSection div{
+  /* height: 100%;
+  width: 50%; */
+}
+.LeftSection{
+  height: 100%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */         
+}
+.Aboutbuttons{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.Aboutbuttons :first-child{
+  margin-right: 10px;
+  padding: 7px 25px;
+  border:2px solid aqua;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.Aboutbuttons :last-child{
+padding: 7px 25px;
+  border:2px solid rgb(4, 255, 0);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.Hotelbuttons{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.Hotelbuttons :first-child{
+  margin-right: 10px;
+  padding: 7px 25px;
+  border:2px solid aqua;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.Hotelbuttons :last-child{
+padding: 7px 25px;
+  border:2px solid rgb(4, 255, 0);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.separatebutton{
+  position: relative;
+  display: flex;
+  width: 40%;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid rgba(0, 0, 0, 0.26);  
+}
+.ShowEnd , .ShowStart{
+  text-align: center;
+}
+.RightSide{
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ 
+}
+.LeftSection p{
+  width: 70%;
+}
+.LeftSection h3{
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.createleft ,.createright{
+  width: 50%;
+  height: 50px;
+}
+.createleft{
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+  /* background-color: aqua; */
+  border-right: 1px solid black;
+}
+.maincreateleft{
+  width: 100%;
+  /* height: 20px; */
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+}
+.createright{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  /* background-color: brown; */
+  border-left: 1px solid black;
+}
+.linkpart{
+  display: flex;
+  justify-content: end;
+  width: 90%;
+}
+.linkpart a{
+ margin: 0;
+ text-decoration: none;
+}
+.mark{
+  display: flex;
+  justify-content: end;
+  width: 10%;
+}
+.mark p{
+  position: relative;
+  left: 4px;
+  top: 6px;
+  border-radius: 50%;
+  background-color: black;
+  height: 6px;
+  width: 7px;
+  margin: 0;
+}
+.createright p{
+  margin: 0 5px;
+}
+.controlbuttons{
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
+}
+.LastSubmit{
+  width: 80px;
+}
+.fixedcontainer{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
+  width: 600px;
+  background-color: white;
+  border: 3px solid rgb(0, 200, 255);
+  border-radius: 10px;
+  top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.fixedcontainer .fixedinput{
+  width: 80%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: ; */
+
+
+}
+.maininput{
+  display: flex;
+  flex-direction: column;
+}
+.fixedinput input{
+  height: 30px;
+  border-color:rgb(0, 191, 255) ;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+.Timeselection input{
+  height: 20px;
+  width: 40px;
+  border-color:rgb(0, 191, 255) ;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+.fixedbutton{
+display: flex;
+justify-content: center;
+}
+.fixedbutton button{
+  margin: 20px 10px;
+  padding: 8px 22px;
+  border: 0;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.Hotelsdata{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 50px;
+}
+.LeftHotel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  height: 100%;
+}
+.LeftHotelpicker{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  height: 100%;
+}
+.LeftHotelpicker input{
+  display: none;
+}
+.LeftHotel img{
+width: 450px;
+height: 250px;
+margin: 10px;
+transition: .5s ease;
+opacity: 100%;
+}
+.LeftHotelpicker img{
+  width: 400px;
+  height: 250px;
+  margin: 10px;
+  transition: .5s ease;
+  opacity: 100%;
+  }
+
+.LeftHotel :nth-child(odd):hover{
+  transform:perspective(850px) rotateY(20deg);
+  opacity: 100%;
+}
+.LeftHotel :nth-child(even):hover{
+  transform:perspective(850px) rotateY(-20deg);
+  opacity: 90%;
+}
+.RightComments{
+  width: 40%;
+  height: 100%;
+ 
+}
+
+.hotelreview{
+  width: 100%;
+  min-height: 200px;
+}
+.hotelreview p{
+padding: 20px;
+font-size: 18px;
+}
+.maincommentsbox{
+  width: 70%;
+  overflow: auto;
+ min-height: 300px;
+ max-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.Eachcomments{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  border: 0;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.13);
+}
+.commentprofile{
+  width: 20%;
+  height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.commentmessage{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: rgb(255, 0, 0); */
+}
+.commentmessage samp{
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.commentmessage p{
+  margin: 0;
+  margin-left: 20px;
+  margin-top: 8px;
+  color: rgba(0, 0, 0, 0.644);
+}
+.commentprofile div{
+  background: url(/images/images.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 45px;
+  height: 45px;
+  border: 1px solid rgb(100, 100, 100);
+  border-radius: 50%;
+}
+.commantsbox{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 260px;
+}
+.commantsbox input{
+  width: 230px;
+  height: 26px;
+  border-radius: 28px;
+  border: 0;
+  background-color: rgba(217, 217, 217, 1);
+}
+.commantsbox input::placeholder{
+padding: 10px;
+}
+.commantsbox i{
+  margin-top: 5px;
+  color: rgb(144, 144, 144);
+}

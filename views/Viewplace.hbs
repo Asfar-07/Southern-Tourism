@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/stylesheets/placeview.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header class="ForRating" id="ForRating" style="display: none;">
+        <div class="cancelrating">
+            <button onclick="openrating()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            </div>
+        <div class="tellabout">
+            <div class="username">
+                <div class="usericon"><i class="fa-solid fa-user"></i></div>
+                <p id="useremail">{{UserData.email}}</p>
+            </div>
+            <p class="noteforrating">review are public and include save your info in database</p>
+        </div>
+        <main>
+             <div class="rating">
+        <span class="star" data-value="1"><i class="fa-regular fa-star"></i></span>
+        <span class="star" data-value="2"><i class="fa-regular fa-star"></i></span>
+        <span class="star" data-value="3"><i class="fa-regular fa-star"></i></span>
+        <span class="star" data-value="4"><i class="fa-regular fa-star"></i></span>
+        <span class="star" data-value="5"><i class="fa-regular fa-star"></i></span>
+      </div>
+        </main>
+        <div class="lastpostrating" onclick="postbackside()">
+            {{#if UserData}}
+            <button onclick="postbackside()">post</button>
+            {{else}}
+            <button>
+            <a href="/login">Do login</a>
+            </button>
+            {{/if}}
+            </div>
+    </header>
+    <main class="imagesection">
+        <div class="Mainimagediv">
+            <img src="{{PlaceData.placeimage}}" width="100%" height="95%">
+
+        </div>
+
+    </main>
+    <main class="MainAbout">
+    <div class="placename">
+        <h1 id="Placename">{{PlaceData.placename}}</h1>
+    </div>
+    <div class="placeabout">
+        <p>{{PlaceData.placeabout}}</p>
+    </div>
+    </main>
+    <main class="pointsandlocation">
+        <div>
+            <section class="points">
+             
+      <div id="ratingOutput">
+        <div id="totalRating" style="display: none;">{{PlaceData.totalRating}}</div>
+        <div id="totaluserRating" style="display: none;">{{PlaceData.totaluserRating}}</div>
+        <p id="ViewRating" onclick="openrating()"></p>
+         </div>
+                <h3>Main Attractions :</h3>
+                <div class="Pointcollection" style="display: none;">{{PlaceData.points}}</div>
+                <div class="viewpoints">
+                   
+                <div>
+            </section>
+            <section class="location">
+                <iframe src="{{{PlaceData.googlemaplocation}}}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+        </div>
+    </main>
+    <p class="hospitaloc"> HospitelLocation:-</p>
+    <main class="lastsection">
+        <section class="hotelsabouts">
+            <div class="HotelsAvailable">
+                <h2>Hotels Available Nearby</h2>
+            </div>
+            <div class="Restaurantsnearby">
+                <h2>Restaurants nearby</h2>
+            </div>
+        </section>
+        <section class="ad">
+            <div><h1>AD</h1></div>
+        </section>
+    </main>
+    <main class="footer">
+        <footer>
+          <div class="redirect">
+            <ul>
+          <h4>ABOUT US</h4>
+          <li><a href="#">HOME</a></li><br>
+          <li><a href="#">ABOUT</a></li><br>
+          <li><a href="#">Tours</a></li><br>
+          <li><a href="#">Locations</a></li><br>
+          <li><a href="#">Popular</a></li><br>
+            </ul>
+          </div>
+        
+          <div class="services">
+            <ul>
+          <h4>SERVICES</h4>
+          <li><a href="#">TOURS</a></li><br>
+          <li><a href="#">LOCATIONS</a></li><br>
+          <li><a href="#">PLACES</a></li><br>
+          <li><a href="#">BOOKINGS</a></li><br>
+            </ul>
+          </div>
+        
+          <h2>Travel Beyond Your Limits</h2>
+        
+          <div class="social">
+            <h4>Follow Us</h4>
+              <a href="#"><i class="fa fa-facebook">Facebook</i></a>
+              <a href="#"><i class="fa fa-twitter">Twitter</i></a>
+              <a href="#"><i class="fa fa-snapchat">snapchat</i></a>
+              <a href="#"><i class="fa fa-email">Email</i></a>
+              <a href="#"><i class="fa fa-instagram">Instagram</i></a>
+          </div>
+        </footer>
+        <p class="copyright">&copy; 2023 Nekha A. All rights reserved</p>
+        </main>
+        <script>
+            function openrating(){
+            const adjacentDiv=document.getElementById('ForRating')
+             if (adjacentDiv.style.display === 'none' || adjacentDiv.style.display === '') {
+            adjacentDiv.style.display = 'block';
+        } else {
+            adjacentDiv.style.display = 'none';
+        }
+            }
+        </script>
+        <script>
+             var collectionpoints=document.querySelector(".Pointcollection").textContent
+            var resultsDiv=document.querySelector('.viewpoints')
+            var splitcollection=collectionpoints.split('/')
+            let lastvalue=splitcollection.map((list)=>{
+                
+                return `<li>${list}</li>`
+            })
+            console.log(resultsDiv)
+            resultsDiv.innerHTML ="<ul>" + lastvalue.join('') + "</ul>";
+        </script>
+        <script>
+            let  totalRating = parseInt(document.getElementById("totalRating").textContent);
+           let numUsers =parseInt(document.getElementById("totaluserRating").textContent);
+           let viewrating=document.getElementById("ViewRating")
+            const Rating = totalRating / numUsers;
+            const averageRating=Rating.toFixed(1)
+            viewrating.textContent=`rating:-${averageRating}/5`
+                console.log(averageRating)
+            const stars = document.querySelectorAll('.star');
+            stars.forEach(star => {
+            star.addEventListener('click', () => {
+                const rating = parseInt(star.getAttribute('data-value'));
+                 totalRating = parseInt(document.getElementById("totalRating").textContent);
+            numUsers =parseInt(document.getElementById("totaluserRating").textContent);
+                totalRating += rating;
+                numUsers++;
+                 stars.forEach((s, index) => {
+      if (index < rating) {
+        s.firstChild.style.color = ' rgb(0, 149, 255)';
+      } else {
+        s.firstChild.style.color = 'white';
+      }
+    });
+            })
+            })
+        </script>
+        <script src="/javascripts/ForRating.js"></script>
+</body>
+</html>

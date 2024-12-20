@@ -1,0 +1,419 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #43586289;
+}
+@media (max-width : 768px){
+  body{
+    width: 100%;
+  };
+}
+   header {
+    background-color:#d1cfcf;
+    color:black;
+    padding: 20px;
+    width: 100%;
+    top:0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    margin-right: 20px;
+    position: fixed;
+    overflow:hidden;
+  } 
+
+  @font-face
+   {
+    font-family: myfont;
+    src: url(/fonts/Eazy\ Chat.ttf);
+  }
+  .logo img{
+    height: 70px;
+    width: 70px;
+    padding: 0;
+    scale:250%;
+    margin-left: 40px;
+    margin-top: 10px;
+  }
+  .link {
+  
+    margin-left: 400px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+   
+  }
+  .link a{
+    position: relative;
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    color: #141313;
+    text-transform: uppercase;
+    margin-right: 40px;
+    font-family: Impact;
+  }
+  .link a::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+  }
+  .link a:hover::after{
+    width: 100%;
+  }
+
+
+  .link button{
+    width: 100px;
+    padding:10px 0;
+    text-align: center;
+    margin: 20px 10px;
+    outline: 0;
+    border-radius: 10px;
+    font-weight:bold;
+    cursor: pointer;
+    background: transparent;
+    color: #000000;
+    position: relative;
+    overflow: hidden;
+    margin-right: 50px;
+  }
+ 
+
+  .main{
+    height: 100vh;
+    width: 100%;
+    background:url(/images/desktop-wallpaper-forest-mountains-sunset-cool-weather-xiaomi-minimalistic-phone.jpg);
+    background-size: 100% 100%;
+  }
+  
+  .cont h2{
+    font-size: 70px;
+    padding-top: 120px;
+    text-align: center;
+    font-family: myfont;
+    font-weight: bold;
+    color: #ffc800;
+    letter-spacing: 3px;
+    animation: fadeIn 5s;
+  }
+  .foranimation{
+    text-align: center;
+    margin-top: -50px;
+    font-style: italic;
+    color: #00f6ff;
+    font-size: 24px;
+    animation: fadeIn 5s;
+    animation: slide-in  3s ease-in-out forwards;
+  }
+
+  @keyframes fadeIn{
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+    }
+
+    @keyframes slide-in {
+      0%{
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100%{
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .SearchPart{
+      background-color:transparent;
+      width: 100%;
+      height: 500px;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .Main-box{
+      width: 35%;
+      height: 200px;
+    }
+    .row{
+      background-color: white;
+      height: 35px;
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid black;
+      border-radius: 2px;
+      padding: 0 8px;
+    }
+    .row input{
+    border: 0;
+    outline: 0;
+    }
+    .row button{
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+    button .fa-solid{
+      color: #555;
+      width: 20px;
+    }
+    .option-section{
+      background-color: white;
+      
+      /* margin: 0 1px; */
+    }
+    .option-section ul{
+      margin: 0;
+      border-top:1px solid #555;
+      padding: 8px 10px;
+    }
+    .option-section  ul li{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 8px 10px;
+      border-radius: 3px;
+      list-style: none;
+    }
+    .option-section  ul li p{
+      margin: 0;
+    }
+    .option-section ul div{
+      width: 25px;
+      height: 25px;
+      margin: 0 5px;
+      border-radius: 50%;
+      background:url(/images/a4351a3afc4a48c27a584ce48d3a6dcd.png);
+      background-repeat:no-repeat ;
+      background-size: 100% 100%;
+    }
+    
+
+footer{
+  display: flex;
+  background-color: #2d2b33;
+  bottom: 0;
+  height: 320px;
+  width: 100%;
+  position: relative;
+  background-image: linear-gradient(to top,rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%),url(/kalen-emsley-Bkci_8qcdvQ-unsplash.jpg);
+  background-size: cover;
+}
+
+.redirect{
+  margin-left: 80px;
+  height: 200px;
+  width: fit-content;
+  /* background-color: #009688; */
+  display: flex;
+  top: 80px;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-evenly;
+}
+
+.redirect a{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-family: 'Gill Sans';
+  font-weight: bold;
+  transition: ease-in-out 3s;
+  
+}
+
+.redirect h4{
+  color: aliceblue;
+  font-weight: bold;
+}
+
+.redirect a :hover{
+  background-color: #009688;
+}
+
+.services{
+  margin-left: 80px;
+  height: 200px;
+  width: fit-content;
+  /* background-color: #009688; */
+  display: flex;
+  top: 80px;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-evenly;
+}
+
+.services a{
+  color: aliceblue;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: 'Gill Sans';
+}
+
+.services h4{
+  color: aliceblue;
+  font-weight: bolder;
+}
+
+.footer h2{
+  font-family:'Segoe UI';
+  font-weight: 5000;
+  margin-left: 100px;
+  height: fit-content;
+  height: 200px;
+  width: fit-content;
+  display: flex;
+  top: 80px;
+  flex-direction: column;
+  font-size: 36px;
+  color:wheat;
+  position: relative;
+}
+
+.social{
+  margin-left: 80px;
+  height: 200px;
+  width: fit-content;
+  /* background-color: #009688; */
+  display: flex;
+  top: 80px;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-evenly;
+}
+
+.social a{
+  color: aliceblue;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: 'Gill Sans';
+}
+
+.fourth{
+  background-color:white;
+  width: 100%;
+  height: 700px;
+}
+
+.reccomend{
+  width: 100%;
+  height: 400px;
+  margin-top: 140px;
+  display: flex;
+  flex-direction: row;
+}
+
+.card{
+  width: 250px;
+  height: 350px;
+  margin-left: 50px;
+  margin-top: -70px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0,  0, 0.19);
+}
+
+.card img{
+  width: 250px;
+  height: 350px;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.3);
+  border-radius: 25px;
+}
+
+.card img:hover{
+  transform: scale(1.3);
+  z-index: 2;
+}
+
+.fourth h1{
+  text-align: center;
+  font-family:Impact ;
+  font-size: 56px;
+  letter-spacing: 2px;
+  font-weight: bolder;
+}
+
+.third{
+  width: 100%;
+  padding-top: 100px;
+  height: 100vh;
+  background-color: #2d2b33;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 10px;
+}
+
+
+.places{
+  width: 450px;
+  height: 300px;
+  background-color: #009688;
+  margin-left: 30px;
+  border-radius: 25px;
+}
+
+.places img{
+  width: 450px;
+  height: 300px;
+  transition: all .7s ease-in-out;
+  border-radius: 25px;
+}
+
+.places h3{
+  text-align: center;
+}
+
+.places h3{
+  color: white;
+  font-family:Verdana, Geneva, Tahoma;
+  font-weight: bold;
+  font-stretch: expanded;
+}
+
+.copyright{
+  text-align: center;
+}
+
+.fifth{
+  width: 100%;
+  height: 600px;
+  margin-right: 10px;
+}
+
+.ourgallery{
+  width: 100%;
+  margin-left: 100px;
+  /* top: 100px; */
+  margin-top: 80px;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ourgallery img{
+  width: 200px;
+  border-radius: 15px;
+  box-shadow: #000000;
+  height: 350px;
+}
+
+.fifth h2{
+  text-align: center;
+  margin-top: 50px;
+  font-family: Verdana, Geneva, Tahoma;
+  font-weight: bolder;
+}

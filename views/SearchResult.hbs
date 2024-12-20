@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        header h2{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .diff-pack{
+    width: 100%;
+    height:180px;
+    border: 1px solid rgb(54, 54, 54);
+    display: flex;
+    justify-content: space-between;
+  }
+  .leftside{
+    width: 25%;
+    /* border: 1px solid rgb(54, 54, 54); */
+    border: 0;
+    
+  }
+  .rightside{
+    width: 60%;
+    margin-left: 10px;
+  }
+  .moreview{
+    display: flex;
+    align-items: center;
+    width: 15%;
+  }
+  .moreview button{
+    color: white;
+    background-color: rgb(0, 126, 126);
+    border: 0;
+    padding: 8px 20px;
+    border-radius: 3px;
+  }
+  .section-collection-pack{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+  }
+  .each-pack{
+    height: 210px;
+    margin: 0 20px;
+    background-color: rgba(8, 34, 54, 1);
+    width: 350px;
+    border-radius: 18px;
+  }
+  .pack-top{
+    width: 100%;
+    height: 50%;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    {{!-- background: url(uploads\\images.jpeg); --}}
+    background-repeat: no-repeat;
+    background-size: 100% 110%;
+  }
+  .pack-bottom{
+    width: 100%;
+    height: 50%;
+  }
+  .pack-bottom h4{
+    margin:3px 10px ;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     color: white;
+  }
+  .pack-bottom p{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 10px auto;
+    width: 90%;
+    font-size: small;
+  }
+  .custom-shape-divider-bottom-1710784453 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1710784453 svg {
+    position: relative;
+    width: 100%;
+    height: 40%;
+    display: block;
+    width: calc(116% + 1.3px);
+}
+
+.custom-shape-divider-bottom-1710784453 .shape-fill {
+    fill:rgba(8, 34, 54, 1);
+}
+.headandbutton{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.headandbutton div{
+    border: 2px solid white;
+    width: 35px;
+    height: 35px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: relative;
+    right: 50px;
+    bottom: 10px;
+}
+.fa-play{
+    color: white;
+}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h2>Searched Ithem:-</h2>
+        </header>
+        <section class="section-collection">
+          {{#if PlaceData}}
+          {{#each PlaceData}}
+            <form action="/Viewofplace" method="post" class="diff-pack">
+                <div class="leftside">
+                 <img  width="100%" height="100%" src="{{this.placeimage}}">
+                </div>
+                <div class="rightside">
+                  <h3>{{this.placename}}</h3>
+                  <p>{{this.placeabout}}</p>
+                  <input type="text" value="{{this.placename}}" name="placename" id="packid" style="display: none;">
+                  rating: /5
+                </div>
+                <div class="moreview">
+                  <button  >ViewMore</button>
+                </div>
+                </form>
+              {{/each}}
+              {{else}}
+               <h5 style="text-align: center; width: 100%; color: #303030b5;">--Empty--</h5>
+              {{/if}}
+        </section>
+        <header>
+            <h2>Relative Packages:-</h2>
+        </header>
+        <section class="section-collection-pack">
+          {{#if PackDatalist}}
+          {{#each PackDatalist}}
+            <div class="each-pack">
+                <div class="pack-top" style="background: url(/uploads\\598276-Armin-Arlert-Mikasa-Ackerman-Shingeki-no-Kyojin.jpg);
+               background-size: 100% 100%;
+              background-repeat: no-repeat;">
+                    <div class="custom-shape-divider-bottom-1710784453">
+                        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="pack-bottom">
+                    <div class="headandbutton">
+                        <h4 >{{this.packagename}}</h4>
+                        <div>
+                          <form action="/MemberUpdate" method="post">
+
+                           <input type="text" value="{{this.packid}}" name="packid" id="packid" style="display: none;">
+                           <input type="text" value="{{this.email}}" name="leaderemail" id="leaderemail" style="display: none;">
+                           <button>
+                            <i class="fa-solid fa-play"></i>
+                           </button>
+                          </form>
+
+                        </div>
+                    </div>
+                    <p>{{this.mainabout}}</p>
+                </div>
+            </div>
+            {{/each}}
+            {{else}}
+             <h5 style="text-align: center; width: 100%; color: #303030b5;">--Empty--</h5>
+            {{/if}}
+            
+        </section>
+    </main>
+</body>
+</html>

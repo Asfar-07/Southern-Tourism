@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/stylesheets/package.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="fixedcontainer" style="display: none; z-index: 5;">
+        <h2>Add New Location</h2>
+        <div class="fixedinput">
+            <div class="maininput">
+                <label for="">Enter LocationName:</label>
+            <input type="text" id="LocationName"  >
+            <label for="">Enter GoogleMap Location:</label>
+            <input type="text" id="LocationMap"  >
+            </div>
+            <div class="Timeselection">
+                <label for="">Enter Day:</label>
+            <input type="number" id="FinalDay" min="0" required>
+            <input type="time" id="FinalTime" style="width:80px ;" required>
+            </div>
+            <div class="fixedbutton">
+                <button style="background-color: rgb(0, 185, 15);" onclick="AddMark()">submit</button> 
+                <button style="background-color: rgb(252, 60, 60);" onclick="addContainerMark()">cancel</button>
+            </div>
+        </div>
+    </div>
+    <header>
+        {{#if MainPackData}}
+        {{#if CheckLeader}}
+        <h2 contenteditable="true" class="PackageName">{{MainPackData.packagename}}</h2>
+        {{else}}
+        <h2  class="PackageName">{{MainPackData.packagename}}</h2>
+        {{/if}}
+        {{else}}
+        <h2 contenteditable="true" class="PackageName">PackName</h2>
+        {{/if}}
+        <a href="">View Location</a>
+        <a href="">View Hotels</a>
+        PackId:<p class="packid">{{MainPackData.packid}}</p>
+        <p class="useremail" style="display: none;">{{useremail}}</p>
+        {{#if CheckLeader}}
+        <button onclick="submitAllData()">save</button>
+        {{/if}}
+    </header>
+    <main>
+        <section class="imagesection">
+        {{#if CheckLeader}}
+               <div class="callectionpicker">
+                <div class="mainImage">
+                    {{#if MainPackData}}
+                    <label for="1stimg"> <img src="{{MainPackData.mainimage1}}" width="100%" height="100%" id="1stimgview"></label>
+                    <input type="file" id="1stimg" >
+                    {{else}}
+                    <label for="1stimg"> <img src="/images/4211763.png" width="100%" height="100%" id="1stimgview"></label>
+                    <input type="file" id="1stimg" >
+                    {{/if}}
+                </div>
+                <div class="anotherimage" >
+                <div style="margin-bottom: 30px;">
+                    {{#if MainPackData}}
+                    <label for="2stimg"><img src="{{MainPackData.mainimage2}}" width="80%" height="100%"  id="2stimgview"></label>
+                    <input type="file" id="2stimg" >
+                    {{else}}
+                    <label for="2stimg"><img src="/images/4211763.png" width="80%" height="100%"  id="2stimgview"></label>
+                    <input type="file" id="2stimg" >
+                    {{/if}}
+                </div>
+                <div>
+                    {{#if MainPackData}}
+                    <label for="3stimg"><img src="{{MainPackData.mainimage3}}"width="80%" height="100%" id="3stimgview"></label>
+                    <input type="file" id="3stimg">
+                    {{else}}
+                     <label for="3stimg"><img src="/images/4211763.png"width="80%" height="100%" id="3stimgview"></label>
+                    <input type="file" id="3stimg">
+                    {{/if}}
+                </div>
+                </div>
+                
+            </div>
+            {{else}}
+             <div class="callectionimage"  >
+                <div class="mainImage">
+                    <img src="{{MainPackData.mainimage1}}" width="100%" height="100%" >
+                </div>
+                <div class="anotherimage">
+                    <img src="{{MainPackData.mainimage2}}" width="100%" height="50%"  style="margin-bottom: 30px;">
+                    <img src="{{MainPackData.mainimage3}}"width="100%" height="50%" >
+                </div>
+                
+            </div>
+            {{/if}}
+         
+        </section>
+        <section class="CenterSection">
+            <div class="LeftSection">
+                <h3>About Package</h3>
+                {{#if MainPackData}}
+                <p >{{MainPackData.mainabout}}</p>
+                {{else}}
+                <p >Write abouts....</p>
+                {{/if}}
+                 <textarea name="" id="" cols="80" rows="15" style="display: none;" class="textabout"></textarea>
+                 {{#if CheckLeader}}
+                 <div class="Aboutbuttons">
+                    <button onclick="ChangeAbout(this)" class="edittext">Edit</button>
+                    <button class="saveabout" style="display: none;" onclick="sendabout(this)">save</button>
+                 </div>
+                 {{/if}}
+                 <div class="rating">
+                    <p>Rating:⭐⭐⭐⭐⭐</p>
+                 </div>
+            </div>
+            <main class="separatebutton">
+                <div class="ShowStart">start</div>
+            <div class="RightSide">
+                <div class="createleft" style="height: {{MainPackData.Height}}px;">
+                    {{#each locationdata}}
+                   <div class="maincreateleft"> 
+                        <div class="linkpart">
+                            <a href="{{this.packhref}}" >{{this.packplacename}}</a>
+                        </div>
+                        <div class="mark">
+                            <p></p>
+                        </div>  
+                    </div>
+                    {{/each}}
+                </div>
+                   <div class="createright" style="height: {{MainPackData.Height}}px;">
+                    {{#each locationtime}}
+                   <p>{{this.packtimetrip}}</p>
+                   {{/each}}
+                   </div>
+
+            </div>
+            <div class="ShowEnd">End</div>
+            {{#if CheckLeader}}
+            <div class="controlbuttons">
+                <button onclick="addContainerMark()">Add</button>
+                <button onclick="removeMark()">Remove</button>
+            </div>
+            {{/if}}
+            {{!-- <button class="LastSubmit" onclick="sendtobackend()">Submit</button> --}}
+            </main>
+        
+        </section>
+        <section class="Hotelsdata">
+            {{#if CheckLeader}}
+             <div class="LeftHotelpicker">
+                <div>
+                    {{#if MainPackData}}
+                    <label for="1stimghotel"> <img src="{{MainPackData.hotelimage1}}"  id="1stimgviewhotel" ></label>
+                    <input type="file" id="1stimghotel" >
+                    {{else}}
+                    <label for="1stimghotel"> <img src="/images/4211763.png"  id="1stimgviewhotel" ></label>
+                    <input type="file" id="1stimghotel" >
+                    {{/if}}
+                </div>
+                <div>
+                    {{#if MainPackData}}
+                    <label for="2stimghotel"> <img src="{{MainPackData.hotelimage2}}"  id="2stimgviewhotel" ></label>
+                    <input type="file" id="2stimghotel" >
+                    {{else}}
+                     <label for="2stimghotel"> <img src="/images/4211763.png"  id="2stimgviewhotel" ></label>
+                    <input type="file" id="2stimghotel" >
+                    {{/if}}
+                </div>
+                <div>
+                    {{#if MainPackData}}
+                    <label for="3stimghotel"> <img src="{{MainPackData.hotelimage3}}"  id="3stimgviewhotel"></label>
+                    <input type="file" id="3stimghotel" >
+                    {{else}}
+                    <label for="3stimghotel"> <img src="/images/4211763.png"  id="3stimgviewhotel"></label>
+                    <input type="file" id="3stimghotel" >
+                    {{/if}}
+                </div>
+            </div>
+            {{else}}
+            <div class="LeftHotel"  >
+                <img src="{{MainPackData.hotelimage1}}" alt="">
+                <img src="{{MainPackData.hotelimage2}}" alt="">
+                <img src="{{MainPackData.hotelimage3}}" alt="">
+            </div>
+            {{/if}}
+            <div class="RightComments">
+                <div class="hotelreview">
+                    <h4>Hotel Details</h4>
+                    {{#if MainPackData}}
+                    <p>{{MainPackData.hotelabout}}</p>
+                    {{else}}
+                    <p>write hotel details....</p>
+                    {{/if}}
+                         <textarea name="" id="" cols="80" rows="15" style="display: none;" class="textabouthotel"></textarea>
+                         {{#if CheckLeader}}
+                         <div class="Hotelbuttons">
+                            <button onclick="ChangeAboutHotel(this)" class="edittexthotel">Edit</button>
+                            <button class="saveabouthotel" style="display: none;" onclick="sendaboutHotel(this)">save</button>
+                         </div>
+                         {{/if}}
+                </div>
+              <h4>Comments</h4>
+              <div class="maincommentsbox">
+                {{#each commentsdata}}
+                <div class="Eachcomments">
+                    <div class="commentprofile">
+                        <div></div>
+                    </div>
+                    <div class="commentmessage">
+                        <samp>{{this.usercommentsemail}}</samp>
+                        <p>{{this.usercomments}}</p>
+                    </div>
+                </div>
+                {{/each}}
+              </div>
+              {{#if CheckLeader}}
+              {{else}}
+              <div class="commantsbox">
+                <input type="text" placeholder="Comments..." id="commentstext">
+             <button onclick="sendcomments()"><i class="fa-solid fa-arrow-right"></i></button>   
+              </div>
+              {{/if}}
+            </div>
+        </section>
+    </main>
+    <script>
+      async  function sendcomments(){
+        const maincommentsbox=document.querySelector('.maincommentsbox')
+        const useremail=document.querySelector('.useremail').textContent
+        var splitemail=useremail.split('@')
+            const valuecomments=document.getElementById("commentstext").value
+            document.getElementById("commentstext").value=""
+            maincommentsbox.innerHTML +=`<div class="Eachcomments">
+                    <div class="commentprofile">
+                        <div></div>
+                    </div>
+                    <div class="commentmessage">
+                        <samp>${splitemail[0]}</samp>
+                        <p>${valuecomments}</p>
+                    </div>
+                </div>`
+            console.log(valuecomments)
+            await fetch('/usercomments', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      
+          body: JSON.stringify({valuecomments})
+    })
+  .then( (response) => {
+      // Handle response from server
+      console.log(response)
+      
+  })
+  .catch(error => {
+      console.error('Error:', error);
+  });
+        }
+         const adjacentDiv=document.querySelector('.fixedcontainer')
+            const CreateNewLDiv=document.querySelector('.createleft')
+            const CreateNewRDiv=document.querySelector('.createright')
+        function addContainerMark() {
+            var currentHeight = CreateNewLDiv.clientHeight;
+            if(currentHeight<400){
+            if (adjacentDiv.style.display === 'none' || adjacentDiv.style.display === '') {
+            adjacentDiv.style.display = 'flex';
+        } else {
+            adjacentDiv.style.display = 'none';
+        }
+            }
+        }
+        function AddMark(){
+            const LocationName=document.getElementById("LocationName").value
+            const LocationMap=document.getElementById("LocationMap").value
+            const FinalDay=document.getElementById("FinalDay").value
+            const FinalTime=document.getElementById("FinalTime").value
+            console.log(FinalDay,FinalTime)
+            if (LocationName === '' || LocationMap==='' || FinalDay==='' || FinalTime==='') {
+            alert('Please enter all data');
+            return;
+        }else{
+            var currentHeight = CreateNewLDiv.clientHeight;
+            CreateNewLDiv.style.height =(currentHeight + 40) + "px";
+            CreateNewRDiv.style.height =(currentHeight + 40) + "px";
+            CreateNewLDiv.innerHTML +=`<div class="maincreateleft"> 
+                        <div class="linkpart">
+                            <a href="${LocationMap}" >${LocationName}</a>
+                        </div>
+                        <div class="mark">
+                            <p></p>
+                        </div>  
+                    </div>`
+                    CreateNewRDiv.innerHTML +=`<p>${FinalDay}st (${FinalTime})</p>`
+            adjacentDiv.style.display = 'none'
+                }
+        }
+        function removeMark(){
+            var lastChildL = CreateNewLDiv.lastElementChild;
+            var lastChildR = CreateNewRDiv.lastElementChild;
+            if (lastChildL) {
+                CreateNewLDiv.removeChild(lastChildL);
+                CreateNewRDiv.removeChild(lastChildR);
+                var currentHeight = CreateNewLDiv.clientHeight;
+            CreateNewLDiv.style.height =(currentHeight - 40) + "px";
+            CreateNewRDiv.style.height =(currentHeight - 40) + "px";
+            }
+        }
+       
+        function ChangeAbout(button){
+            const maintextarea=document.querySelector("div.LeftSection p")
+         const textarea=document.querySelector(".textabout")
+         const saveaboutbutton=document.querySelector(".saveabout")
+         if (textarea.style.display === 'none' || textarea.style.display === '') {
+            textarea.style.display = 'block';
+            saveaboutbutton.style.display='block'
+            textarea.value=maintextarea.textContent
+            maintextarea.style.display = 'none';
+            button.textContent="back"
+        } else {
+            textarea.style.display = 'none';
+            saveaboutbutton.style.display='none'
+            maintextarea.style.display = 'block';
+            button.textContent="edit"
+        }
+        }
+        function sendabout(button){
+            const maintextarea=document.querySelector("div.LeftSection p")
+            const textarea=document.querySelector(".textabout")
+            const edittext=document.querySelector(".edittext")
+            button.style.display = 'none';
+            textarea.style.display = 'none';
+            maintextarea.style.display = 'block';
+            maintextarea.textContent=textarea.value
+            edittext.textContent="edit"
+            console.log(textarea)
+        }
+        function ChangeAboutHotel(button){
+            const maintextarea=document.querySelector("div.hotelreview p")
+         const textarea=document.querySelector(".textabouthotel")
+         const saveaboutbutton=document.querySelector(".saveabouthotel")
+         if (textarea.style.display === 'none' || textarea.style.display === '') {
+            textarea.style.display = 'block';
+            saveaboutbutton.style.display='block'
+            textarea.value=maintextarea.textContent
+            maintextarea.style.display = 'none';
+            button.textContent="back"
+        } else {
+            textarea.style.display = 'none';
+            saveaboutbutton.style.display='none'
+            maintextarea.style.display = 'block';
+            button.textContent="edit"
+        }
+        }
+        function sendaboutHotel(button){
+            const maintextarea=document.querySelector("div.hotelreview p")
+            const textarea=document.querySelector(".textabouthotel")
+            const edittext=document.querySelector(".edittexthotel")
+            button.style.display = 'none';
+            textarea.style.display = 'none';
+            maintextarea.style.display = 'block';
+            maintextarea.textContent=textarea.value
+            edittext.textContent="edit"
+            console.log(textarea)
+        }
+    </script>
+    <script src="/javascripts/javasc.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tourist Guide Registration Form</title>
+    <link rel="stylesheet" href="/stylesheets/reg.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Membership Registration</h2>
+          <form action="#" method="POST">
+            <div class="personal-info">
+                <h3>Personal Information:</h3>
+                <label for="full_name">Full Name:</label><br>
+                <input type="text" id="full_name" name="full_name"><br>
+                <label for="gender">Gender:</label><br>
+                <select id="gender" name="gender">
+                <option value="male">MALE</option>
+                <option value="female">FEMALE</option>
+                </select><br><br>
+                <label for="contact_number">Contact Number:</label><br>
+                <input type="tel" id="contact_number" name="contact_number"><br>
+                <label for="Google_map">Google Map(Embed Format):</label><br>
+                <input type="tel" id="Google_map" name="Google_map"><br>
+                <label for="address">Address:</label><br>
+                <textarea id="address" name="address"></textarea><br>
+                <label for="languages_spoken">Languages Spoken:</label><br>
+                <input type="text" id="languages_spoken" name="languages_spoken"><br>
+            </div>
+             <div class="experience-certification">
+                <!-- <h3>Experience and Certification:</h3> -->
+                <label for="years_experience">Number of years as a tourist guide:</label><br> 
+                <input type="number" id="years_experience" name="years_experience" min="0"><br>
+                <label for="certification">Certification:</label><br>
+                <select id="certification" name="certification">
+                    <option value="yes">YES</option>
+                    <option value="no">NO</option>
+                </select><br><br>
+            </div>
+            {{#if Checkuser_data}}
+            <input type="submit" value="Submit">
+            {{else}}
+            <h4 style="background-color: red; text-align:center;">Please Login</h4>
+            {{/if}}
+        </form>
+    </div>
+</body>
+</html>

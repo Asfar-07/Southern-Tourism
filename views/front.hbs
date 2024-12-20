@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Southern Tours</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="/stylesheets/front.css">
+</head>
+<body>
+  <div class="main">
+  <header>
+        <div class="logo">
+<img src="southern_travels__1_-removebg-preview.png">
+     </div>
+    <div class="link">
+        <a href="/">HOME</a>
+        <a href="/">PACKAGES</a>
+        <a href="/">ABOUT US</a>
+        <a href="/">CONTACT</a>
+         {{#if Checkuser_data}}
+        <a href="/logout" style="margin: 0;">
+      <button type="button"><span></span>Loginout</button>  
+        </a>
+         {{else}}
+         <a href="/login" style="margin: 0;">
+      <button type="button"><span></span>Login</button>  
+        </a>
+        {{/if}}
+        <a href="/register" style="margin: 0;">
+      <button type="button"><span></span>Register</button>
+        </a>
+         {{#if ChackMembership}}
+        <a href="/Profile">
+        <button type="button"><span></span>Profile</button>
+        </a>
+        {{else}}
+        {{/if}}
+    </div>
+  </header>
+    
+  <div class="cont">
+  <h2>Welcome to Southern Tours</h2>
+  <p class="foranimation">Lets Check those Bucket Lists</p>
+  {{!-- <form>
+    <input type="text" placeholder="search">
+    <button type="submit" class="button1">search</button>
+  </form> --}}
+  <section class="SearchPart">
+  <div class="Main-box">
+  <div class="row">
+    <input type="text" class="inputP" id="searchInput" placeholder="Search.." onkeyup="search()" autocomplete="off">
+    <button onclick="searched()"><i class="fa-solid fa-magnifying-glass"></i></button>
+  </div>
+  <div class="option-section">
+  {{!-- <ul>
+    <li><div ></div>java</li>
+    <li><div></div>python</li>
+  </ul> --}}
+  </div>
+ </div>
+</section>
+  </div>
+
+</div>
+
+<main class="third">
+
+  <div class="places">
+    <a href="/SearchresultValue/kerala">
+    <img src="nature-photographer-29ezCWtMtnM-unsplash.jpg">
+    <h3>Kerala</h3>
+    </a>
+  </div>
+  
+  <div class="places">
+    <a href="/SearchresultValue/TamilNadu">
+    <img src="siby-QXIBCvvA_jc-unsplash.jpg">
+    <h3>Tamil Nadu</h3>
+    </a>
+  </div>
+
+  <div class="places">
+    <a href="/SearchresultValue/Karnataka">
+    <img src="karna.jpg">
+    <h3>Karnataka</h3>
+    </a>
+  </div>
+
+  <div class="places">
+    <a href="/SearchresultValue/AndraPradesh">
+    <img src="/avin-cp-jPUESk-Q_8k-unsplash.jpg">
+    <h3>Andra Pradesh</h3>
+    </a>
+  </div>
+
+  <div class="places">
+    <a href="/SearchresultValue/Telangana">
+    <img src="chandrakanth-kanth-Ybm-BxCl73k-unsplash.jpg">
+    <h3>Telangana</h3>
+    </a>
+  </div>
+
+
+
+</main>
+<main class="fourth">/
+  <h1>POPULAR PLACES</h1>
+  <div class="reccomend">
+  
+    <div class="card">
+    <img src="anoop-bhaskar-DcUCqYqVCIo-unsplash.jpg">
+    <h2>Coorg</h2>
+  </div>
+
+  <div class="card">
+    <img src="ashim-d-silva-JHUgc_HJN5Q-unsplash.jpg">
+    <h2>Mysore Palace</h2>
+  </div>
+
+  <div class="card">
+    <img src="Edakkal Caves-Kalpetta-Wayanad-Kerala- Travel_13.JPG">
+    <h2>Edakkal Caves</h2>
+  </div>
+
+  <div class="card">
+    <img src="rahul-chakraborty-zhT9Vejzd-k-unsplash.jpg">
+    <h2>Varkala Beach</h2>
+  </div>
+
+  <div class="card">
+    <img src="venu-jampana-1WFyKrHguqM-unsplash.jpg">
+    <h2>Virupaksha Temple</h2>
+  </div>
+  </div>
+</main>
+<main class="fifth">
+  <h2>Our Gallery</h2>
+  <div class="ourgallery">
+    <img src="yannic-laderach-Dqx4XWuXu7w-unsplash.jpg">
+    <img src="/holly-mandarich-UVyOfX3v0Ls-unsplash.jpg">
+    <img src="oliver-sjostrom-CihXnvELE00-unsplash.jpg">
+    <img src="ari-he-idIUCsynuS4-unsplash.jpg">
+    <img src="juliana-malta-tHXX4fl3-ms-unsplash.jpg">
+    <img src="scott-goodwill-y8Ngwq34_Ak-unsplash.jpg">
+  </div>
+</main>
+<main class="footer">
+<footer>
+  <div class="redirect">
+    <ul>
+  <h4>ABOUT US</h4>
+  <li><a href="#">HOME</a></li><br>
+  <li><a href="#">ABOUT</a></li><br>
+  <li><a href="#">Tours</a></li><br>
+  <li><a href="#">Locations</a></li><br>
+  <li><a href="#">Popular</a></li><br>
+    </ul>
+  </div>
+
+  <div class="services">
+    <ul>
+  <h4>SERVICES</h4>
+  <li><a href="#">TOURS</a></li><br>
+  <li><a href="#">LOCATIONS</a></li><br>
+  <li><a href="#">PLACES</a></li><br>
+  <li><a href="#">BOOKINGS</a></li><br>
+    </ul>
+  </div>
+
+  <h2>Travel Beyond Your Limits</h2>
+
+  <div class="social">
+    <h4>Follow Us</h4>
+      <a href="#"><i class="fa fa-facebook">Facebook</i></a>
+      <a href="#"><i class="fa fa-twitter">Twitter</i></a>
+      <a href="#"><i class="fa fa-snapchat">snapchat</i></a>
+      <a href="#"><i class="fa fa-email">Email</i></a>
+      <a href="#"><i class="fa fa-instagram">Instagram</i></a>
+  </div>
+</footer>
+<p class="copyright">&copy; 2023 Nekha A. All rights reserved</p>
+</main>
+<script>
+   async function search() {
+      const searchTerm = document.getElementById('searchInput').value;
+      const resultsDiv = document.querySelector('.option-section');
+   if(searchTerm.length!=0){
+      try {
+        // Send a request to your backend API endpoint
+        const response = await fetch(`/search?q=${encodeURIComponent(searchTerm)}`);
+        const data = await response.json();
+
+        // Display results
+        resultsDiv.innerHTML = '';
+
+        if (data.length === 0) {
+          resultsDiv.innerHTML = 'No results found.';
+        } else {
+         
+         let lastvalue=data.map((list)=>{
+          {{!-- console.log(list.username) --}}
+          const color="blue"
+          return `<li><div style="background: url(${list.ProfileImage});   background-repeat: no-repeat;
+  background-size: 100% 100%;" '></div>`+"<p  onclick='Givevalue(this)'>"+ list.placename + "</p>" +"</li>"
+         })
+         resultsDiv.innerHTML ="<ul>" + lastvalue.join('') + "</ul>";
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+      }
+     if(searchTerm.length===0){
+      console.log("nooo")
+       resultsDiv.innerHTML = '';
+     }
+    }
+    function Givevalue(list){
+      const searchTerm = document.getElementById('searchInput');
+      const resultsDiv = document.querySelector('.option-section');
+      searchTerm.value=list.innerHTML
+      resultsDiv.innerHTML = '';
+    console.log(list.innerHTML) 
+    }
+    function searched(){
+       const searchTerm = document.getElementById('searchInput').value;
+       try{
+        window.location.href=`/SearchresultValue/${encodeURIComponent(searchTerm)}`
+       }catch(error){
+        console.error("error dictect",error)
+       }
+    }
+</script>
+</body>
+</html>

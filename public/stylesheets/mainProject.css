@@ -1,0 +1,82 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+h1{
+  display: flex;
+  justify-content: center;
+}
+.maindiv{
+  display: flex;
+  justify-content: center;
+}
+a {
+  border: 1px solid black;
+  padding: 10px 20px;
+  text-decoration:none;
+  margin: 0 10px;
+  color: #00B7FF;
+}
+.SearchPart{
+  background-color:transparent;
+  width: 100%;
+  height: 500px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.Main-box{
+  width: 35%;
+  height: 200px;
+}
+.row{
+  height: 35px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 0 8px;
+}
+.row input{
+border: 0;
+outline: 0;
+}
+.row button{
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+button .fa-solid{
+  color: #555;
+  width: 20px;
+}
+.option-section{
+  background-color: white;
+  
+  /* margin: 0 1px; */
+}
+.option-section ul{
+  margin: 0;
+  border-top:1px solid #555;
+  padding: 8px 10px;
+}
+.option-section  ul li{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 3px;
+  list-style: none;
+}
+.option-section  ul li p{
+  margin: 0;
+}
+.option-section ul div{
+  width: 25px;
+  height: 25px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background:url(/images/a4351a3afc4a48c27a584ce48d3a6dcd.png);
+  background-repeat:no-repeat ;
+  background-size: 100% 100%;
+}

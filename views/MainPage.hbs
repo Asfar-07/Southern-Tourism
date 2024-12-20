@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/stylesheets/mainProject.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Southern Tours</title>
+</head>
+<body>
+    <h1>Southern Tours</h1>
+    <div class="maindiv">
+        {{#if Checkuser_data}}
+        <a href="/logout">Logout</a>
+        {{else}}
+        <a href="/login">Login</a>
+        {{/if}}
+        <a href="/register">Register</a>
+        {{#if ChackMembership}}
+        <a href="/Profile">Profile</a>
+        {{else}}
+        {{/if}}
+    </div>
+    <section class="SearchPart">
+  <div class="Main-box">
+  <div class="row">
+    <input type="text" class="inputP" id="searchInput" placeholder="Search.." onkeyup="search()" autocomplete="off">
+    <button onclick="searched()"><i class="fa-solid fa-magnifying-glass"></i></button>
+  </div>
+  <div class="option-section">
+  {{!-- <ul>
+    <li><div ></div>java</li>
+    <li><div></div>python</li>
+  </ul> --}}
+  </div>
+ </div>
+</section>
+<script>
+   
+   // Function to handle search
+    async function search() {
+      const searchTerm = document.getElementById('searchInput').value;
+      const resultsDiv = document.querySelector('.option-section');
+   if(searchTerm.length!=0){
+      try {
+        // Send a request to your backend API endpoint
+        const response = await fetch(`/search?q=${encodeURIComponent(searchTerm)}`);
+        const data = await response.json();
+
+        // Display results
+        resultsDiv.innerHTML = '';
+
+        if (data.length === 0) {
+          resultsDiv.innerHTML = 'No results found.';
+        } else {
+         
+         let lastvalue=data.map((list)=>{
+          {{!-- console.log(list.username) --}}
+          const color="blue"
+          return `<li><div style="background: url(${list.ProfileImage});   background-repeat: no-repeat;
+  background-size: 100% 100%;" '></div>`+"<p  onclick='Givevalue(this)'>"+ list.packagename + "</p>" +"</li>"
+         })
+         resultsDiv.innerHTML ="<ul>" + lastvalue.join('') + "</ul>";
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+      }
+     if(searchTerm.length===0){
+      console.log("nooo")
+       resultsDiv.innerHTML = '';
+     }
+    }
+    function Givevalue(list){
+      const searchTerm = document.getElementById('searchInput');
+      const resultsDiv = document.querySelector('.option-section');
+      searchTerm.value=list.innerHTML
+      resultsDiv.innerHTML = '';
+    console.log(list.innerHTML) 
+    }
+    function searched(){
+       const searchTerm = document.getElementById('searchInput').value;
+       try{
+        window.location.href=`/SearchresultValue/${encodeURIComponent(searchTerm)}`
+       }catch(error){
+        console.error("error dictect",error)
+       }
+    }
+</script>
+</body>
+</html>
